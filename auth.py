@@ -30,7 +30,7 @@ def login_auth(token):
 
     # Index into decoded dictionary to get username and password
     u, p = decoded['username'], decoded['password']
-    print(f'User: {u}, Pass: {p}')
+    # print(f'User: {u}, Pass: {p}')
 
     # Authenticate username and password
     if u == username and p == password:
@@ -50,11 +50,11 @@ def main():
         """
         # Get the POSTed JSON data from the client
         response = request.get_json()
-        print(response)
+        # print(response)
 
         # Pull JWT from JSON data
         token = json.loads(response)["auth"]
-        print(token)
+        # print(token)
 
         # Authenticate login info and send result to client
         message = json.dumps({"auth": login_auth(token)})
